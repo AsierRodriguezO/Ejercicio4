@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://AsierRodriguezO.github.io/ejercicio4/ejercicio2/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>lagrange - Documentación Asier</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "lagrange";
+        var mkdocs_page_input_path = "ejercicio2.md";
+        var mkdocs_page_url = "/ejercicio4/ejercicio2/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Documentación Asier
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ejercicio1/">Minima</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">lagrange</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduccion">Introducción</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-forking-del-repositorio-original-de-lagrange">1) Forking del repositorio original de Lagrange</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pasos">Pasos:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-entender-la-estructura-de-lagrange">2) Entender la estructura de Lagrange</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-configurar-_configyml">3) Configurar _config.yml</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-instalar-dependencias-y-probar-localmente">4) Instalar dependencias y probar localmente</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-personalizar-la-pagina-principal-indexhtml">5) Personalizar la página principal (index.html)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-personalizar-la-pagina-acerca-de-abouthtml-o-aboutmarkdown">6) Personalizar la página "Acerca de" (about.html o about.markdown)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#7-crear-posts-articulos-del-blog">7) Crear posts (artículos del blog)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#8-agregar-imagenes-a-posts-y-paginas">8) Agregar imágenes a posts y páginas</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#9-probar-localmente-los-cambios">9) Probar localmente los cambios</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#10-git-inicializar-comitear-y-subir-a-github">10) Git: inicializar, comitear y subir a GitHub</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#11-configurar-github-pages">11) Configurar GitHub Pages</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#12-comprobar-el-despliegue">12) Comprobar el despliegue</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#13-personalizacion-avanzada-opcional">13) Personalización avanzada (opcional)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#cambiar-colores-y-estilos">Cambiar colores y estilos</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#agregar-categorias-y-etiquetas">Agregar categorías y etiquetas</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#crear-paginas-adicionales">Crear páginas adicionales</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resumen-de-pasos-clave">Resumen de pasos clave</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#referencias-utiles">Referencias útiles</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusión</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ejercicio3/">Satelite</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Documentación Asier</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">lagrange</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ejercicio-2-descripcion-paso-a-paso-para-desplegar-el-tema-jekyll-lagrange-en-github-pages">EJERCICIO 2 — Descripción paso a paso para desplegar el tema Jekyll "Lagrange" en GitHub Pages</h1>
+<p>Fecha: 19 de noviembre de 2025</p>
+<h2 id="introduccion">Introducción</h2>
+<p>En este documento se describen, en detalle y en formato paso a paso, los procesos para:</p>
+<ul>
+<li>Importar, configurar y probar el tema Jekyll <code>Lagrange</code> en GitHub Pages.</li>
+<li>Personalizar la página principal, páginas estáticas y posts.</li>
+<li>Desplegar el sitio en GitHub Pages usando la rama <code>gh-pages</code>.</li>
+</ul>
+<h2 id="1-forking-del-repositorio-original-de-lagrange">1) Forking del repositorio original de Lagrange</h2>
+<p>La manera recomendada para importar un tema es mediante <strong>fork</strong>. Esto mantiene el tema sincronizado con el repositorio original y permite actualizaciones futuras.</p>
+<h3 id="pasos">Pasos:</h3>
+<ol>
+<li><strong>Accede al repositorio oficial de Lagrange:</strong></li>
+<li>Visita: <code>https://github.com/LeNPaul/Lagrange</code></li>
+<li>
+<p>Este es uno de los repositorios más populares del tema Lagrange.</p>
+</li>
+<li>
+<p><strong>Hacer Fork del repositorio:</strong></p>
+</li>
+<li>Haz clic en el botón <strong>"Fork"</strong> en la esquina superior derecha.</li>
+<li>Selecciona tu cuenta de GitHub como destino.</li>
+<li>
+<p>GitHub creará una copia del repositorio en tu cuenta.</p>
+</li>
+<li>
+<p><strong>Clonar el repositorio forkeado en tu máquina local:</strong></p>
+</li>
+</ol>
+<pre><code class="language-bash">git clone https://github.com/tu_cuenta_github/Lagrange.git
+cd Lagrange
+</code></pre>
+<h2 id="2-entender-la-estructura-de-lagrange">2) Entender la estructura de Lagrange</h2>
+<p>Antes de personalizar, es importante conocer la estructura del tema:</p>
+<pre><code>Lagrange/
+├── _includes/        # Componentes HTML reutilizables
+├── _layouts/         # Plantillas de página
+├── _posts/          # Tus artículos/posts del blog
+├── _sass/           # Estilos SCSS
+├── assets/          # Imágenes, CSS compilado, etc.
+├── _config.yml      # Configuración principal
+├── Gemfile          # Dependencias de Ruby/Bundler
+├── index.html       # Página principal
+├── about.html       # Página &quot;Acerca de&quot;
+└── README.md        # Documentación del tema
+</code></pre>
+<h2 id="3-configurar-_configyml">3) Configurar <code>_config.yml</code></h2>
+<p>El archivo <code>_config.yml</code> es donde personalizas tu sitio. Aquí está la configuración básica para Lagrange:</p>
+<pre><code class="language-yaml"># Build settings
+markdown:            kramdown
+highlighter:         rouge
+permalink:           /:title
+plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
+
+# Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
+title:                 'LagrangeAsier'
+description:           'Primer tema lagrange Jekyll personalizado por Asier Rodriguez Ormaechea'
+author:              'Asier Rodriguez Ormaechea'
+url:                 'https://AsierRodriguezO.github.io/lagrange' # the base hostname &amp; protocol for your site
+baseurl:             '/lagrange' 
+language:            'ES-ES'
+copyright:           '2025, Asier'
+# Configuración del tema
+theme: lagrange
+
+# Configuración del blog
+paginate: 5
+paginate_path: &quot;/blog/page:num&quot;
+
+# Redes sociales (algunos temas usan esto)
+github_username: &quot;AsierRodriguezO&quot;
+
+# Construcción
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+</code></pre>
+<h2 id="4-instalar-dependencias-y-probar-localmente">4) Instalar dependencias y probar localmente</h2>
+<ol>
+<li><strong>Instalar Bundler y dependencias:</strong></li>
+</ol>
+<pre><code class="language-bash">gem install bundler
+bundle install
+</code></pre>
+<ol>
+<li><strong>Servir el sitio en local:</strong></li>
+</ol>
+<pre><code class="language-bash">bundle exec jekyll serve
+</code></pre>
+<ol>
+<li><strong>Acceder al sitio:</strong></li>
+<li>Abre tu navegador en <code>http://localhost:4000/lagrange/</code></li>
+<li>Comprueba que el sitio se visualiza correctamente.</li>
+</ol>
+<h2 id="5-personalizar-la-pagina-principal-indexhtml">5) Personalizar la página principal (<code>index.html</code>)</h2>
+<p>La página principal de Lagrange es el punto de entrada. Personalízala según tu temática:</p>
+<h2 id="6-personalizar-la-pagina-acerca-de-abouthtml-o-aboutmarkdown">6) Personalizar la página "Acerca de" (<code>about.html</code> o <code>about.markdown</code>)</h2>
+<h2 id="7-crear-posts-articulos-del-blog">7) Crear posts (artículos del blog)</h2>
+<p>Los posts van en la carpeta <code>_posts/</code> con el formato <code>YYYY-MM-DD-titulo.markdown</code>:</p>
+<p>Exatamente igual que en Minima.</p>
+<h2 id="8-agregar-imagenes-a-posts-y-paginas">8) Agregar imágenes a posts y páginas</h2>
+<p>en este caso voy a usar solo url de internet pero si quiero usar imagenes locales las pongo en <code>assets/img/</code> igual que en el tema Minima.</p>
+<h2 id="9-probar-localmente-los-cambios">9) Probar localmente los cambios</h2>
+<p>Después de hacer cambios, siempre prueba localmente:</p>
+<pre><code class="language-bash">bundle exec jekyll serve
+</code></pre>
+<h2 id="10-git-inicializar-comitear-y-subir-a-github">10) Git: inicializar, comitear y subir a GitHub</h2>
+<ol>
+<li><strong>Añadir todos los cambios:</strong></li>
+</ol>
+<pre><code class="language-bash">git add .
+git commit -m &quot;Personalizar tema Lagrange: configuración y contenido inicial&quot;
+</code></pre>
+<ol>
+<li><strong>Subir a la rama gh-pages:</strong></li>
+</ol>
+<pre><code class="language-bash">git push origin gh-pages
+</code></pre>
+<blockquote>
+<p><strong>Nota:</strong> Si el repositorio está en la rama <code>master</code> o <code>main</code>, puedes cambiar:
+<code>bash
+git push origin master:gh-pages</code></p>
+</blockquote>
+<h2 id="11-configurar-github-pages">11) Configurar GitHub Pages</h2>
+<ol>
+<li>
+<p><strong>En GitHub, ve a tu repositorio <code>lagrange</code></strong></p>
+</li>
+<li>
+<p><strong>Accede a Settings → Pages</strong></p>
+</li>
+<li>
+<p><strong>Configura:</strong></p>
+</li>
+<li><strong>Source (Fuente):</strong> Selecciona rama <code>gh-pages</code></li>
+<li><strong>Folder (Carpeta):</strong> Selecciona <code>/ (root)</code></li>
+</ol>
+<h2 id="12-comprobar-el-despliegue">12) Comprobar el despliegue</h2>
+<ol>
+<li>
+<p><strong>Accede a la URL:</strong>
+   <code>https://tu_cuenta_github.github.io/lagrange/</code></p>
+</li>
+<li>
+<p><strong>Verifica:</strong></p>
+</li>
+<li>✅ La página principal carga correctamente</li>
+<li>✅ Los posts aparecen en la lista</li>
+<li>✅ Las imágenes se visualizan</li>
+<li>✅ Los links internos funcionan</li>
+<li>
+<p>✅ La página "Acerca de" se visualiza</p>
+</li>
+<li>
+<p><strong>Si hay problemas:</strong></p>
+</li>
+<li>Verifica en GitHub: Settings → Pages → <strong>Build and deployment</strong> para ver logs de error.</li>
+<li>Comprueba que <code>baseurl: "/lagrange"</code> está en <code>_config.yml</code>.</li>
+<li>Asegúrate de que todas las rutas de imágenes usan <code>{{ site.baseurl }}</code>.</li>
+</ol>
+<h2 id="13-personalizacion-avanzada-opcional">13) Personalización avanzada (opcional)</h2>
+<h3 id="cambiar-colores-y-estilos">Cambiar colores y estilos</h3>
+<p>Edita <code>_sass/</code> para cambiar los estilos del tema:</p>
+<pre><code class="language-scss">// _sass/_variables.scss
+$primary-color: #333;
+$secondary-color: #666;
+$accent-color: #007bff;
+</code></pre>
+<h3 id="agregar-categorias-y-etiquetas">Agregar categorías y etiquetas</h3>
+<p>En <code>_config.yml</code>, agrupa posts por categorías:</p>
+<pre><code class="language-markdown">---
+layout: post
+title: &quot;Mi artículo&quot;
+categories: [viajes, aventura]
+tags: [naturaleza, exploración]
+---
+</code></pre>
+<h3 id="crear-paginas-adicionales">Crear páginas adicionales</h3>
+<p>Crea nuevos archivos <code>.markdown</code> en la raíz:</p>
+<pre><code class="language-bash">touch contacto.markdown
+</code></pre>
+<pre><code class="language-markdown">---
+layout: page
+title: Contacto
+permalink: /contacto/
+---
+
+Formulario o información de contacto aquí...
+</code></pre>
+<h2 id="resumen-de-pasos-clave">Resumen de pasos clave</h2>
+<table>
+<thead>
+<tr>
+<th>Paso</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Fork del repositorio Lagrange en GitHub</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Clonar en local con <code>git clone</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Configurar <code>_config.yml</code> con tu información</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Instalar dependencias con <code>bundle install</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Probar localmente con <code>bundle exec jekyll serve</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Personalizar <code>index.html</code>, <code>about.html</code> y páginas</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Crear posts en <code>_posts/</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Agregar imágenes en <code>assets/img/</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Hacer commit y push a <code>gh-pages</code></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Configurar GitHub Pages en Settings</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Acceder a la URL pública en unos minutos</td>
+</tr>
+</tbody>
+</table>
+<h2 id="referencias-utiles">Referencias útiles</h2>
+<ul>
+<li><strong>Jekyll Oficial:</strong> https://jekyllrb.com/</li>
+<li><strong>Tema Lagrange:</strong> https://github.com/LeNomDesFleurs/Lagrange</li>
+<li><strong>Documentación Markdown:</strong> https://daringfireball.net/projects/markdown/</li>
+<li><strong>GitHub Pages:</strong> https://pages.github.com/</li>
+</ul>
+<h2 id="conclusion">Conclusión</h2>
+<p>El tema Lagrange es una excelente alternativa a Minima para crear blogs profesionales y atractivos. Siguiendo estos pasos, podrás tener un blog completamente funcional y personalizado en GitHub Pages en menos de 30 minutos.</p>
+<p>Recuerda que la parte más importante es el <strong>contenido</strong> de calidad que publiques. ¡Que disfrutes creando tu blog!</p>
+<hr />
+<p><strong>Última actualización:</strong> 19 de noviembre de 2025</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ejercicio1/" class="btn btn-neutral float-left" title="Minima"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ejercicio3/" class="btn btn-neutral float-right" title="Satelite">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ejercicio1/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../ejercicio3/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
