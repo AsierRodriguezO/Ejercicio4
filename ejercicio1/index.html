@@ -60,9 +60,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#6-ajustes-finos-y-ejemplos-practicos-para-baseurl-y-rutas">6) Ajustes finos y ejemplos prácticos para baseurl y rutas</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#7-verificacion-local-y-checks-rapidos">7) Verificación local y checks rápidos</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#8-urls-solicitadas-coloca-tus-enlaces-reales-aqui">8) URLs solicitadas (coloca tus enlaces reales aquí)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#7-verificacion">7) Verificación</a>
     </li>
     </ul>
                 </li>
@@ -114,6 +112,7 @@
 <pre><code class="language-bash">jekyll new miblog2 
 cd miblog2
 </code></pre>
+<p><img alt="imagen1" src="../img/ejer1/imagen.png" /></p>
 <p>El tema minima ya esta instalado por defecto en jekyll asique no hace falta cambiar nada.</p>
 <h2 id="2-configurar-_configyml">2) Configurar <code>_config.yml</code></h2>
 <p>El archivo <code>_config.yml</code> contiene los pares clave/valor que Jekyll usa. A continuación un ejemplo con campos mínimos y cómo personalizarlo con tu nombre.</p>
@@ -130,17 +129,24 @@ paginate: 5
 
 
 </code></pre>
+<p><img alt="imagen2" src="../img/ejer1/imagen1.png" /></p>
 <h2 id="3-personalizar-paginas-indexmarkdown-aboutmarkdown-y-crear-una-pagina-nueva">3) Personalizar páginas (index.markdown, about.markdown) y crear una página nueva</h2>
 <p>Para personalizar entramos a los ficheros y los editamos con markdown para que despues se traduzca a html.</p>
 <blockquote>
 <p>Index.markdown:</p>
+</blockquote>
+<p><img alt="imagen3" src="../img/ejer1/imagen2.png" /></p>
+<blockquote>
 <p>About.markdown:</p>
 </blockquote>
+<p><img alt="imagen4" src="../img/ejer1/imagen3.png" /></p>
 <h2 id="4-crear-al-menos-3-posts">4) Crear al menos 3 posts</h2>
 <p>Los posts deben ir en <code>_posts/</code> y el nombre de archivo debe tener formato <code>YYYY-MM-DD-titulo.markdown</code>.</p>
 <p>Ejemplo de 3 posts mínimos:</p>
 <p><code>_posts/2025-11-13-presentacion-blog.markdown</code>:</p>
 <p>En mi caso he creado bastantes post.</p>
+<p><img alt="imagen5" src="../img/ejer1/imagen4.png" /></p>
+<p><img alt="imagen6" src="../img/ejer1/imagen5.png" /></p>
 <p>Consejos sobre imágenes:</p>
 <ul>
 <li>Añade las imágenes en <code>assets/imagenes/</code> (o donde prefieras). GitHub Pages sirve esos archivos estáticos.</li>
@@ -154,6 +160,7 @@ paginate: 5
 git commit -m &quot;Sitio Jekyll con tema minima - inicial&quot;
 git push origin gh-pages (este se hace para subirlo en la rama gh-pages)
 </code></pre>
+<p><img alt="imagen7" src="../img/ejer1/imagen6.png" /></p>
 <ol>
 <li>Crear repositorio en GitHub (puedes usar la interfaz web o <code>gh</code> CLI). Supondremos que el repo se llama <code>mi-blog</code>.</li>
 </ol>
@@ -165,55 +172,14 @@ git push -u origin main
 <li>En GitHub: ve a Settings → Pages. Selecciona la rama <code>main</code> (o <code>gh-pages</code> si prefieres publicar contenido estático) y la carpeta <code>/ (root)</code> como fuente. Guarda.</li>
 </ol>
 <p>Notas sobre ramas y estrategias de despliegue:</p>
-<ul>
-<li>Estrategia A (recomendada, simple): Subir el código fuente Jekyll a <code>main</code>. GitHub Pages construye el sitio automáticamente usando su motor Jekyll (si el tema y las gemas son compatibles con GitHub Pages). Configura Pages en <code>main</code> y site estará disponible en <code>https://tu_cuenta_github.github.io/mi-blog/</code> si <code>baseurl</code> está correctamente puesto a <code>/mi-blog</code>.</li>
-<li>Estrategia B (compilar localmente): Ejecutar <code>bundle exec jekyll build</code> y subir la carpeta <code>_site</code> a la rama <code>gh-pages</code>. En GitHub Pages configuras la rama <code>gh-pages</code> y la carpeta <code>/ (root)</code> para servir contenido estático. Esta estrategia evita depender del builder de GitHub y te permite usar plugins no soportados por Pages.</li>
-</ul>
+<p><img alt="imagen8" src="../img/ejer1/imagen7.png" /></p>
 <h2 id="6-ajustes-finos-y-ejemplos-practicos-para-baseurl-y-rutas">6) Ajustes finos y ejemplos prácticos para <code>baseurl</code> y rutas</h2>
 <ul>
 <li>Si <code>baseurl</code> = "/mi-blog" entonces en las plantillas y enlaces escribe: <code>{{ site.baseurl }}{{ post.url }}</code> o para assets: <code>{{ site.baseurl }}/assets/imagenes/ejemplo.jpg</code>.</li>
 <li>Si <code>baseurl</code> = "" (sitio de usuario), no uses <code>{{ site.baseurl }}</code>.</li>
 </ul>
-<h2 id="7-verificacion-local-y-checks-rapidos">7) Verificación local y checks rápidos</h2>
-<ol>
-<li>Probar localmente antes de subir:cd </li>
-</ol>
-<pre><code class="language-bash">bundle exec jekyll serve
-# Visitar http://localhost:4000/mi-blog/ (si usas baseurl)
-</code></pre>
-<ol>
-<li>
-<p>Comprueba que en la cabecera o pie aparece: <strong>Tu Nombre Apellidos</strong> — verifica <code>_config.yml</code> y los <code>author</code> de los posts.</p>
-</li>
-<li>
-<p>Comprobar enlaces rotos y rutas de imágenes.</p>
-</li>
-</ol>
-<h2 id="8-urls-solicitadas-coloca-tus-enlaces-reales-aqui">8) URLs solicitadas (coloca tus enlaces reales aquí)</h2>
-<ul>
-<li>URL del sitio Jekyll con Lagrange en GitHub Pages (ejercicio 2) (ejemplo):</li>
-</ul>
-<p>https://tu_cuenta_github.github.io/lagrange/</p>
-<ul>
-<li>URL del repositorio del TEMA ELEGIDO (ejercicio 3) (ejemplo):</li>
-</ul>
-<p>https://github.com/tu_cuenta_github/otro_tema/</p>
-<ul>
-<li>URL del sitio con TEMA ELEGIDO en Netlify (ejercicio 3) (ejemplo):</li>
-</ul>
-<p>https://nombre_sitio.netlify.app</p>
-<ul>
-<li>URL del repositorio de la actividad2-1 (sitio en MkDocs) (ejemplo):</li>
-</ul>
-<p>https://github.com/tu_cuenta_github/actividad2_1/</p>
-<ul>
-<li>URL del sitio MkDocs desplegado en GitHub Pages (ejemplo):</li>
-</ul>
-<p>https://tu_cuenta_github.github.io/actividad2_1/</p>
-<ul>
-<li>URL del sitio MkDocs desplegado en Cloudflare Pages (ejemplo):</li>
-</ul>
-<p>https://nombre_sitio2.pages.dev</p>
+<h2 id="7-verificacion">7) Verificación</h2>
+<p><img alt="imagen9" src="../img/ejer1/imagen8.png" /></p>
               
             </div>
           </div><footer>
